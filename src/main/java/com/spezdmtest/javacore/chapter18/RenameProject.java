@@ -1,4 +1,4 @@
-package main.java.com.spezdmtest.javacore.chapter18;
+package com.spezdmtest.javacore.chapter18;
 
 public class RenameProject {
     public static void main(String[] args) {
