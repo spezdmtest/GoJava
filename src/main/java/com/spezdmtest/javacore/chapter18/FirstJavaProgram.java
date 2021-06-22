@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.chapter18;
+package main.java.com.spezdmtest.javacore.chapter18;
 
 public class FirstJavaProgram {
     public static void main(String[] args) {
