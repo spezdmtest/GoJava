@@ -19,7 +19,7 @@ public class IteratorDemo {
         Iterator<String> itr = al.iterator();
         while(itr.hasNext()) {
             String element = itr.next();
-            System.out.println(element + " ");
+            System.out.print(element + " ");
         }
         System.out.println();
 
@@ -33,7 +33,7 @@ public class IteratorDemo {
         itr = al.iterator();
         while(itr.hasNext()) {
             String element = itr.next();
-            System.out.println(element + " ");
+            System.out.print(element + " ");
         }
         System.out.println();
 
