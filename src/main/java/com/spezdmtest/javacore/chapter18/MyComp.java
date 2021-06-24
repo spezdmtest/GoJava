@@ -21,9 +21,8 @@ class CompDemo {
         ts.add("E");
         ts.add("F");
         ts.add("D");
-    for (String element : ts)
-        System.out.print(element + " ");
+        for (String element : ts)
+            System.out.print(element + " ");
         System.out.println();
-
     }
 }
