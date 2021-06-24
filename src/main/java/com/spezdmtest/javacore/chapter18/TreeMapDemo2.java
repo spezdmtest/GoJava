@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class TComp implements Comparator <String> {
+    class TComp implements Comparator <String> {
     @Override
     public int compare(String aStr, String bStr) {
         int i, j, k;
@@ -19,7 +19,7 @@ public class TComp implements Comparator <String> {
                 return k;
         }
 }
-class TreeMapDemo2 {
+public class TreeMapDemo2 {
     public static void main(String[] args) {
         TreeMap<String,Double> tm = new TreeMap<String,Double>(new TComp());
         tm.put("Джон Доу", 3434.34);
