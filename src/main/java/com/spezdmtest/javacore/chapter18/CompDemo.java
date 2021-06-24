@@ -3,7 +3,7 @@ package com.spezdmtest.javacore.chapter18;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-public class MyComp implements Comparator<String> {
+class MyComp implements Comparator<String> {
     @Override
     public int compare(String a, String b) {
         String aStr, bStr;
