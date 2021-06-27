@@ -47,24 +47,5 @@ public class Phonebook {
              number = (String) ht.get(name);
              System.out.println(number);
          } while (!name.equals("выход"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
