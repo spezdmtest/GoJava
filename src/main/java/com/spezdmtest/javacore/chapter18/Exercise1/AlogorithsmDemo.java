@@ -1,32 +1,36 @@
 package com.spezdmtest.javacore.chapter18.Exercise1;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 
 public class AlogorithsmDemo {
     public static void main(String[] args) {
-        ArrayList<Integer> arrayList1 = new ArrayList<>();
-        arrayList1.add(6);
-        arrayList1.add(4);
-        arrayList1.add(6);
-        arrayList1.add(8);
-        arrayList1.add(1);arrayList1.add(100);
-        arrayList1.add(-100);
+        LinkedHashSet<Integer> list1 = new LinkedHashSet<>();
+        list1.add(6);
+        list1.add(4);
+        list1.add(6);
+        list1.add(8);
+        list1.add(1);
+        list1.add(100);
+        list1.add(-100);
 
 
-        ArrayList<Integer> arrayList2 = new ArrayList<>();
-        arrayList2.add(3);
-        arrayList2.add(8);
-        arrayList2.add(76544);
-        arrayList2.add(-42);
-        arrayList2.add(100);
-        arrayList2.add(1);
+        LinkedHashSet<Integer> list2 = new LinkedHashSet<>();
+        list2.add(3);
+        list2.add(8);
+        list2.add(76544);
+        list2.add(-42);
+        list2.add(100);
+        list2.add(1);
 
         System.out.println("Входные данные: ");
-        System.out.println(arrayList1);
-        System.out.println(arrayList2);
+        System.out.println(list1);
+        System.out.println(list2);
         System.out.println("Результат: ");
-        System.out.println(Algorithsm.alg(arrayList1,arrayList2));
+
+        Algorithsm<Integer> algorithsm = new Algorithsm<>();
+        System.out.println(algorithsm.mergeCollection(list1,list2));
+
+
     }
 }
