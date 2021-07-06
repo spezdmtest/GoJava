@@ -1,10 +1,12 @@
 package com.spezdmtest.javacore.chapter18.Exercise2;
-import java.util.ArrayDeque;
 
-public class Analizator{
+import java.util.Stack;
 
-    static String analizator(String str) {
-        ArrayDeque<Character> bracket = new ArrayDeque<>();
+public class AnalyzerBrackets {
+
+    static String analyzerBrackets(String str) {
+       // ArrayDeque<Character> bracket = new ArrayDeque<>();
+        Stack<Character> bracket = new Stack<>();
         String result;
         char element;
         for (int i = 0; i < str.length(); i++) {
