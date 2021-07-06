@@ -1,9 +1,8 @@
 package com.spezdmtest.javacore.chapter18.Exercise1;
 
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 
-public class AlogorithsmDemo {
+public class CompareCollectionsDemo {
     public static void main(String[] args) {
         LinkedHashSet<Integer> list1 = new LinkedHashSet<>();
         list1.add(6);
@@ -28,9 +27,7 @@ public class AlogorithsmDemo {
         System.out.println(list2);
         System.out.println("Результат: ");
 
-        Algorithsm<Integer> algorithsm = new Algorithsm<>();
-        System.out.println(algorithsm.mergeCollection(list1,list2));
-
-
+        CompareCollections<Integer> collections = new CompareCollections<>();
+        System.out.println(collections.compareCollections(list1,list2));
     }
 }

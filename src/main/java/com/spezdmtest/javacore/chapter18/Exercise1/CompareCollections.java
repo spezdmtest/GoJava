@@ -3,8 +3,8 @@ package com.spezdmtest.javacore.chapter18.Exercise1;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
-public class Algorithsm <T> {
-    public TreeSet<T> mergeCollection(LinkedHashSet<T> list1, LinkedHashSet<T> list2) {
+public class CompareCollections <T> {
+    public TreeSet<T> compareCollections(LinkedHashSet<T> list1, LinkedHashSet<T> list2) {
         TreeSet<T> treeSet = new TreeSet<>();
 //        for (int i = 0; i < arrayList1.size(); i++) {
 //            for(int j = 0; j < arrayList2.size(); j++) {
@@ -21,7 +21,7 @@ public class Algorithsm <T> {
                 }
             }
         }
-            return treeSet;
-        }
+        return treeSet;
     }
+}
 
