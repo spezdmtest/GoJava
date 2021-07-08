@@ -17,6 +17,7 @@ public class CompareCollectionsDemo_StreamAPI {
         CompareCollections_StreamAPI.printCollection(result);
         System.out.println();
         //Sorting
+        System.out.println("Сортировка: ");
         List<Integer> resultSort= CompareCollections_StreamAPI.sortCollection(result);
         CompareCollections_StreamAPI.printCollection(resultSort);
 
