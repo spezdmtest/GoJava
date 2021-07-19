@@ -13,7 +13,7 @@ public class NestTry {
                     int c[] = { 1 };
                     c[42] = 99;
                 }
-            }catch (ArrayIndexOutOfBoundsException e) {
+            } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Индекс за пределами массива: " + e);
             }
         }catch (ArithmeticException e) {
