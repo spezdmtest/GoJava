@@ -16,7 +16,7 @@ public class ShowFileV3 {
             do {
                 i = fin.read();
                 if(i != -1) System.out.print((char) i);
-            }while (i != 1);
+            }while (i != -1);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден.");
         } catch (IOException e) {
