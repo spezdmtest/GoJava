@@ -19,6 +19,5 @@ public class TinyEdit {
             if(str[i].equals("стоп")) break;
             System.out.println(str[i]);
         }
-
     }
 }
