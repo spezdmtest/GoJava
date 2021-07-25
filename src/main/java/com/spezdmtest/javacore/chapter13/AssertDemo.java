@@ -13,7 +13,7 @@ public class AssertDemo {
         for(int i = 0; i < 10; i++) {
             n = getnum();
 
-            assert n > 10;
+            assert n > 10 : "n отрицательное!";
             System.out.println("n равно " + n);
         }
     }
