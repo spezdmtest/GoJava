@@ -15,9 +15,4 @@ public class LamdaDemo {
         System.out.println("Случайное значение:  " + myNum.getValue());
         System.out.println("Еще одно случайное значение: " + myNum.getValue());
     }
-
-
-
-
-
 }
