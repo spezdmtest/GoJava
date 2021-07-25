@@ -4,7 +4,7 @@ interface MyNumber {
     double getValue();
 }
 
-public class LamdaDemo {
+public class LambdaDemo {
     public static void main(String[] args) {
         MyNumber myNum;
         myNum = () -> 123.45;
