@@ -8,7 +8,7 @@ class MyArraysOps {
 
         for(int i = 0; i < vals.length; i++)
             if(vals[i] == v) count ++;
-            return count;
+        return count;
 
     }
 }
