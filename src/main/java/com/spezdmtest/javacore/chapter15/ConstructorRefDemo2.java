@@ -18,7 +18,6 @@ class MyClass3<T> {
     }
 }
 
-
 public class ConstructorRefDemo2 {
     public static void main(String[] args) {
         MyFunc5<Integer> myClassCons = MyClass3<Integer>::new;
