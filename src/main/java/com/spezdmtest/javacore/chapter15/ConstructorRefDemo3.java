@@ -47,6 +47,7 @@ public class ConstructorRefDemo3 {
 
         MyFunc6<MyClass5,String> myClassCons2 = MyClass5::new;
         MyClass5 mc2 = myClassFactory(myClassCons2,"Лямбда");
+
         System.out.println("Значение str в объекте mc2 равно " + mc2.getVal());
     }
 }
