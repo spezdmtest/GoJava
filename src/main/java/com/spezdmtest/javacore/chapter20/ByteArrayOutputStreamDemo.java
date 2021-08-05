@@ -29,6 +29,11 @@ public class ByteArrayOutputStreamDemo {
             f.writeTo(f2);
         }catch (IOException e) {
             System.out.println("Ошибка ввода-вывода: " + e);
+            return;
         }
+        System.out.println("Установка в исходное состояние");
+        f.reset();
+        for(int i = 0; i < 3; i++) f.write('X');
+        System.out.println(f.toString());
     }
 }
