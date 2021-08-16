@@ -1,7 +1,5 @@
 package com.spezdmtest.javacore.chapter20;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -9,19 +7,19 @@ public class FileInputStreamDemo {
     public static void main(String[] args) {
         int size;
         try(FileInputStream f = new FileInputStream("C:/Users/spezdm/IdeaProjects/GoJava/" +
-                                        "src/main/java/com/spezdmtest/javacore/chapter20/FileInputStreamDemo.java")) {
+                "src/main/java/com/spezdmtest/javacore/chapter20/FileInputStreamDemo.java")) {
             System.out.println("Общее колличество доступных байтов: " +
-                                (size = f.available()));
-           int n = size/27;
+                    (size = f.available()));
+            int n = size/27;
             System.out.println("Первые " + n + " байтов, " +
-                        "прочитаных из файла по очереди методом read()");
-           for(int i = 0; i < n; i++) {
-               System.out.print((char) f.read());
-           }
+                    "прочитаных из файла по очереди методом read()");
+            for(int i = 0; i < n; i++) {
+                System.out.print((char) f.read());
+            }
 
             System.out.println("\nВсе еще доступно: " + f.available());
             System.out.println("Чтение следующих " + n +
-                                " байтов по очереди методом read(b[])" );
+                    " байтов по очереди методом read(b[])" );
             byte b[] = new byte[n];
             if(f.read(b) != n) {
                 System.err.println("Нельзя прочитать " + n + " байтов.");
@@ -31,14 +29,14 @@ public class FileInputStreamDemo {
             System.out.println("\nВсе еще доступно: " +
                     (size = f.available()));
             System.out.println(
-               "Пропустить половину оставщихся байтов методом skipe() ");
+                    "Пропустить половину оставщихся байтов методом skipe() ");
             f.skip(size/2);
             System.out.println("\nВсе еще доступно: " + f.available());
             System.out.println("Чтение " + n/2 +
-                                " байтов, размещаемых в конце массива" );
+                    " байтов, размещаемых в конце массива" );
             if(f.read(b,n/2,n/2) != n/2) {
                 System.err.println(
-                       "Нельзя прочитать" + n/2 + " байтов.");
+                        "Нельзя прочитать" + n/2 + " байтов.");
             }
 
             System.out.println(new String(b,0,b.length));
