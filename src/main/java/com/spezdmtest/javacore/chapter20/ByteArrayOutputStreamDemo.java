@@ -31,6 +31,7 @@ public class ByteArrayOutputStreamDemo {
             System.out.println("Ошибка ввода-вывода: " + e);
             return;
         }
+        System.out.println();
         System.out.println("Установка в исходное состояние");
         f.reset();
         for(int i = 0; i < 3; i++) f.write('X');
