@@ -17,16 +17,16 @@ public class DataIODemo {
         }
 
         try(DataInputStream din =
-            new DataInputStream(new FileInputStream("Test.dat")) ) {
+                    new DataInputStream(new FileInputStream("Test.dat")) ) {
             {
                 double d = din.readDouble();
                 int i = din.readInt();
                 boolean b = din.readBoolean();
 
                 System.out.println("Получаемые значения: " +
-                                    d + " " + i + " " + b);
+                        d + " " + i + " " + b);
             }
-         }catch(FileNotFoundException e) {
+        }catch(FileNotFoundException e) {
             System.out.println("Нельзя отктыить файл ввода");
             return;
         }catch (IOException e) {
