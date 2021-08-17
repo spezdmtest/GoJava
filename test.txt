@@ -1,1 +1,1 @@
-Читать данные из буфера.
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
