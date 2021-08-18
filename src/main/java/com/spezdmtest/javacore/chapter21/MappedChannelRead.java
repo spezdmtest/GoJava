@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class MappedChannelRead {
     public static void main(String[] args) {
         try (FileChannel fChan =
-                     (FileChannel) Files.newByteChannel(Paths.get("test.txt")) ) {
+                     (FileChannel) Files.newByteChannel(Paths.get("test2.txt")) ) {
             long fSize = fChan.size();
 
             MappedByteBuffer mBuf =
