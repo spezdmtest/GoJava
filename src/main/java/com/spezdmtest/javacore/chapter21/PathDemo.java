@@ -8,7 +8,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 public class PathDemo {
     public static void main(String[] args) {
-        Path filepath = Paths.get("example\\test.txt");
+        Path filepath = Paths.get("example\\test2.txt");
 
         System.out.println("Имя файла: " + filepath.getName(1));
         System.out.println("Путь к файлу: " + filepath);
