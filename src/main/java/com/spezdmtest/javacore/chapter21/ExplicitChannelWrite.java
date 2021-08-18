@@ -11,7 +11,7 @@ import java.nio.file.StandardOpenOption;
 
 public class ExplicitChannelWrite {
     public static void main(String[] args) {
-        try(FileChannel fChan = (FileChannel) Files.newByteChannel(Paths.get("test.txt"),
+        try(FileChannel fChan = (FileChannel) Files.newByteChannel(Paths.get("test2.txt"),
                                         StandardOpenOption.WRITE,
                                         StandardOpenOption.CREATE) )
         {
