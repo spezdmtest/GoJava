@@ -15,7 +15,7 @@ public class ExplicitChannelReadOld {
         try {
             fin = new FileInputStream("test.txt");
             fChan = fin.getChannel();
-            mBuf = ByteBuffer.allocate(28);
+            mBuf = ByteBuffer.allocate(26);
 
             do {
                 count = fChan.read(mBuf);
