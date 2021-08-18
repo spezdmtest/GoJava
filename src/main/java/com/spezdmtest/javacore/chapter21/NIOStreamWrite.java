@@ -11,7 +11,7 @@ public class NIOStreamWrite {
     public static void main(String[] args) {
         try (OutputStream fout = new BufferedOutputStream(
                 Files.newOutputStream(
-                        Paths.get("test.txt")
+                        Paths.get("test2.txt")
                 )) ) {
             for(int i=0; i < 26; i++)
                 fout.write((byte) ('A' + i));
