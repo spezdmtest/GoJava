@@ -13,7 +13,7 @@ public class ExplicitChannelRead {
         int count;
         Path filepath = null;
         try {
-            filepath = Paths.get("test.txt");
+            filepath = Paths.get("test2.txt");
         }catch (InvalidPathException e) {
             System.out.println("Path Error" + e);
             return;
