@@ -8,7 +8,7 @@ public class FileDemo {
     public static void main(String[] args) {
         File f1 = new File("C:/Users/spezdm/IdeaProjects/GoJava/src/main/java/COPYRIGHT");
         p("Имя файла: " + f1.getName());
-        p("Путь: " + f1.getName());
+        p("Путь: " + f1.getPath());
         p("Абсолютный путь: " + f1.getAbsolutePath());
         p("Родительский каталог: " + f1.getParent());
         p(f1.exists() ? "существует" : "не существует");
