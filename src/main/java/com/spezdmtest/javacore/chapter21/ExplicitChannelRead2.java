@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 public class ExplicitChannelRead2 {
     public static void main(String[] args) {
         int count;
-        try(SeekableByteChannel fChan = Files.newByteChannel(Paths.get("test.txt"))) {
+        try(SeekableByteChannel fChan = Files.newByteChannel(Paths.get("test2.txt"))) {
             ByteBuffer mBuf = ByteBuffer.allocate(128);
             do {
                 count = fChan.read(mBuf);
