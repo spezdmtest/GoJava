@@ -28,7 +28,7 @@ public class CharArrayWriterDemo {
 
         System.out.println("\nВ поток вывода типа FileWriter()");
 
-        try(FileWriter f2 = new FileWriter("test.txt") ) {
+        try(FileWriter f2 = new FileWriter("test2.txt") ) {
             f.writeTo(f2);
         }catch (IOException e) {
             System.out.println("Ошибка ввода-вывода: " + e);
