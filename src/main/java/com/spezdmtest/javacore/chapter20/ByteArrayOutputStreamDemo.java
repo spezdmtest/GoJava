@@ -25,7 +25,7 @@ public class ByteArrayOutputStreamDemo {
         for(int i = 0; i < b.length; i++)
             System.out.print((char) b[i]);
 
-        try(FileOutputStream f2 = new FileOutputStream("test.txt")) {
+        try(FileOutputStream f2 = new FileOutputStream("test2.txt")) {
             f.writeTo(f2);
         }catch (IOException e) {
             System.out.println("Ошибка ввода-вывода: " + e);
