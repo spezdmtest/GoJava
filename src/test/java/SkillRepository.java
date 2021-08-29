@@ -1,6 +1,5 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -78,7 +77,6 @@ public class SkillRepository  {
 //                    writer.write(data);
 //                }
             }
-
 
     public static ArrayList givenJsonOfSkill(String json){
         Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
