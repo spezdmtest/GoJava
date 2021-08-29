@@ -18,6 +18,6 @@ public class StreamDemo3 {
                 (a,b) -> a * Math.sqrt(b),
                 (a,b) -> a * b
         );
-        System.out.println("Пр  оизведение квадратных корней: " + productOfSqrRoots);
+        System.out.println("Произведение квадратных корней: " + productOfSqrRoots);
     }
 }
