@@ -69,14 +69,7 @@ public class SkillRepository  {
         }
         return skills;
     }
-    public void deleteById(Long id) throws IOException {
-//            ArrayList<String> list = getAll();
-//            list.remove(id);
-//            try(FileWriter writer = new FileWriter("skill.txt")) {
-//                for(String data : list){
-//                    writer.write(data);
-//                }
-            }
+    public void deleteById(Long id) throws IOException { }
 
     public static ArrayList givenJsonOfSkill(String json){
         Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
