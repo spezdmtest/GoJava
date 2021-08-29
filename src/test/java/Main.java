@@ -23,6 +23,12 @@ public class Main {
         System.out.println(skillRepository.getAll());
         System.out.println("Обновление данных ");
         System.out.println(skillRepository.update(skills));
+        System.out.println("Удаления данных ");
+        System.out.println("Введите номер id: ");
+        Scanner in2 = new Scanner(System.in);
+        long num2 = in2.nextLong();
+        System.out.println("Результат: ");
+        skillRepository.deleteById(num2);
 
 
     }

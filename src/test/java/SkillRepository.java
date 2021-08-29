@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SkillRepository  {
 
-       public List<String> getById(Long id) throws IOException {
+    public ArrayList<String> getById(Long id) throws IOException {
         String path = "C:/Users/spezdm/IdeaProjects/GoJava/skill.txt";
         List<String> list = null;
         try {
@@ -24,7 +24,7 @@ public class SkillRepository  {
         } catch (IOException e) {
             System.out.println("Ошибка ввода-вывода");
         }
-        return list.stream().filter(x -> Long.parseLong(x.split("\\s")[0]) == id)
+        return (ArrayList<String>) list.stream().filter(x -> Long.parseLong(x.split("\\s")[0]) == id)
                 .collect(Collectors.toList());
     }
 
@@ -70,7 +70,15 @@ public class SkillRepository  {
         }
         return skills;
     }
-    public void deleteById(Long id) {}
+    public void deleteById(Long id) throws IOException {
+//            ArrayList<String> list = getAll();
+//            list.remove(id);
+//            try(FileWriter writer = new FileWriter("skill.txt")) {
+//                for(String data : list){
+//                    writer.write(data);
+//                }
+            }
+
 
     public static ArrayList givenJsonOfSkill(String json){
         Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
