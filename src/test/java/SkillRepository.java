@@ -1,65 +1,85 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.MatcherAssert.assertThat;
+public class SkillRepository {
 
-public class SkillRepository  {
+    static List<Skill> skills = new ArrayList<>();
 
-    public ArrayList<String> getById(Long id) throws IOException {
-        String path = "C:/Users/spezdm/IdeaProjects/GoJava/skill.txt";
-        List<String> list = null;
-        try {
-            list = Files.readAllLines(Paths.get(path));
-        } catch (IOException e) {
-            System.out.println("Ошибка ввода-вывода");
+    public static ArrayList<Skill> getAll() {
+        final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
+        Gson gson = new Gson();
+        List<Skill> skills = null;
+        try (BufferedReader reader = new BufferedReader(new FileReader(JSON_PATH))) {
+            Type type = new TypeToken<ArrayList<Skill>>() {
+            }.getType();
+            skills = gson.fromJson(reader, type);
+        }catch (NullPointerException e) {
+            System.out.println("Нет данных в файле");
         }
-        return (ArrayList<String>) list.stream().filter(x -> Long.parseLong(x.split("\\s")[0]) == id)
-                .collect(Collectors.toList());
-    }
-
-    public void save(ArrayList<Skill> list) {
-        try (FileWriter writer = new FileWriter("skill.txt")) {
-            for (Skill data : list) {
-                Long id = data.getId();
-                String name = data.getName();
-                writer.write(id + " " + name + System.getProperty("line.separator"));
-            }
+        catch (FileNotFoundException e) {
+            System.out.println("Файл не возможно прочитать.");
         }catch (IOException e) {
-            System.out.println("Произошла ошибка ввода-вывода");
+            System.out.println("Ошибка ввода-вывода. ");
         }
-    }
-    public ArrayList<String> getAll() {
-        String path = "C:/Users/spezdm/IdeaProjects/GoJava/skill.txt";
-        List<String> list = null;
-        try {
-            list = Files.readAllLines(Paths.get(path));
-        }catch(IOException e) {
-            System.out.println("Ошибка ввода-вывода");
-        }
-        return (ArrayList<String>) list.stream().collect(Collectors.toList());
+
+        return (ArrayList<Skill>) skills;
     }
 
-    public void Print(ArrayList<Skill> skills) {
-        skills.forEach(System.out::println);
+    public static Skill getById(Long id) {
+        final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
+        Gson gson = new Gson();
+        List<Skill> skills = null;
+        try(BufferedReader reader = new BufferedReader(new FileReader(JSON_PATH))) {
+            Type type = new TypeToken<ArrayList<Skill>>(){}.getType();
+            skills = gson.fromJson(reader,type);
+        }catch (FileNotFoundException e) {
+            System.out.println("Файл не возможно прочитать.");
+        }catch (IOException e) {
+            System.out.println("Ошибка ввода-вывода. ");
+        }
+
+        return  skills.stream()
+                      .filter(x -> x.getId().equals(id))
+                      .map(x -> new Skill (x.getId(),x.getName()))
+                      .findFirst().orElse(null);
     }
 
-    public ArrayList<Skill> update(ArrayList<Skill> skills) throws IOException {
+   public static Skill save(Skill skill) {
+            skills.add(skill);
+            final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
+            Gson gson = new Gson();
+            try (FileWriter writer = new FileWriter(JSON_PATH)) {
+                gson.toJson(skills, writer);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        return skill;
+   }
+
+//        try (FileWriter writer = new FileWriter("skills.json")) {
+//            for (Skill data : list) {
+//                Long id = data.getId();
+//                String name = data.getName();
+//                writer.write(id + " " + name + System.getProperty("line.separator"));
+//            }
+
+    void Print(ArrayList<Skill> skill) {
+        skill.forEach(System.out::println);
+    }
+
+    ArrayList<Skill> update(ArrayList<Skill> skills) throws IOException {
         //Обновление данных в файле
-        try (FileWriter writer = new FileWriter("skill.txt")) {
+        try (FileWriter writer = new FileWriter("skills.json")) {
             skills.removeAll(skills);
             skills.add(new Skill((long)3,"three"));
             skills.add(new Skill((long)4,"four"));
-            for (Skill data : skills) {
+            for (Skill data : skills)  {
                 Long id = data.getId();
                 String name = data.getName();
                 writer.write(id + " " + name + System.getProperty("line.separator"));
@@ -69,13 +89,13 @@ public class SkillRepository  {
         }
         return skills;
     }
-    public void deleteById(Long id) throws IOException { }
+    void deleteById(Long id) throws IOException { }
 
-    public static ArrayList givenJsonOfSkill(String json){
-        Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
-        Collection<Skill> targetCollection = new Gson().fromJson(json,targetClassType);
-        assertThat(targetCollection, instanceOf(ArrayList.class));
-        return (ArrayList) targetCollection;
-    }
+//    static ArrayList<Skill> parseJsonToSkills(String json){
+//        Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
+//        Collection<Skill> targetCollection = new Gson().fromJson(json,targetClassType);
+//        assertThat(targetCollection, instanceOf(ArrayList.class));
+//        return (ArrayList) targetCollection;
+//    }
 }
 
