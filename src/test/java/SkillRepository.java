@@ -1,6 +1,5 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -44,33 +43,21 @@ public class SkillRepository {
         }
 
         return  skills.stream()
-                      .filter(x -> x.getId().equals(id))
-                      .map(x -> new Skill (x.getId(),x.getName()))
-                      .findFirst().orElse(null);
+                .filter(x -> x.getId().equals(id))
+                .map(x -> new Skill (x.getId(),x.getName()))
+                .findFirst().orElse(null);
     }
 
-   public static Skill save(Skill skill) {
-            skills.add(skill);
-            final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
-            Gson gson = new Gson();
-            try (FileWriter writer = new FileWriter(JSON_PATH)) {
-                gson.toJson(skills, writer);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+    public static Skill save(Skill skill) {
+        skills.add(skill);
+        final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
+        Gson gson = new Gson();
+        try (FileWriter writer = new FileWriter(JSON_PATH)) {
+            gson.toJson(skills, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return skill;
-   }
-
-//        try (FileWriter writer = new FileWriter("skills.json")) {
-//            for (Skill data : list) {
-//                Long id = data.getId();
-//                String name = data.getName();
-//                writer.write(id + " " + name + System.getProperty("line.separator"));
-//            }
-
-    void Print(ArrayList<Skill> skill) {
-        skill.forEach(System.out::println);
     }
 
     ArrayList<Skill> update(ArrayList<Skill> skills) throws IOException {
