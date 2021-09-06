@@ -1,4 +1,4 @@
-import java.util.function.ToLongFunction;
+import java.util.Optional;
 
 public class Skill {
 
@@ -11,6 +11,10 @@ public class Skill {
         this.name = name;
     }
 
+//    public Skill(Long maxId) {
+//        this.id = maxId;
+//    }
+
 
     public Long getId() {
         return id;
@@ -22,7 +26,7 @@ public class Skill {
 
     public Long setId(long id) {
         this.id = id;
-        return null;
+        return id;
     }
 
     public void setName(String name) {
