@@ -1,16 +1,14 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.*;
 import java.lang.reflect.Type;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SkillRepository {
 
-        static List<Skill> skills = new ArrayList<>();
+    static List<Skill> skills = new ArrayList<>();
 
 
     public static ArrayList<Skill> getAll() {
@@ -61,7 +59,7 @@ public class SkillRepository {
         skills.add(new Skill(maxId + 1, ""));
             final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
             Gson gson = new Gson();
-            try (FileWriter writer = new FileWriter(JSON_PATH)) {
+            try (FileWriter writer = new FileWriter(JSON_PATH,false)) {
                 gson.toJson(skills, writer);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -70,21 +68,14 @@ public class SkillRepository {
          return skill;
     }
 
-    Skill update(Skill skill)  {
-        List <Skill> lists = getAll();
-//Обновление данных в файле
-//        try (FileWriter writer = new FileWriter("skills.json")) {
-//            skills.removeAll(skills);
-//            skills.add(new Skill((long)3,"three"));
-//            skills.add(new Skill((long)4,"four"));
-//            for (Skill data : skills)  {
-//                Long id = data.getId();
-//                String name = data.getName();
-//                writer.write(id + " " + name + System.getProperty("line.separator"));
-//            }
-//        }catch (IOException e) {
-//            System.out.println("Произошла ошибка ввода-вывода");
-//        }
+    public static Skill update(Skill skill)  {
+     List<Skill> skills = new ArrayList<>();
+     skills.add(skill);
+//     skills.stream().
+//    skills.stream()
+//       skills.add(skill);
+//       skills.stream().forEach(System.out::println);
+
        return null;
     }
     void deleteById(Long id) throws IOException { }
