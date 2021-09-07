@@ -71,20 +71,12 @@ public class SkillRepository {
     public static Skill update(Skill skill)  {
      List<Skill> skills = new ArrayList<>();
      skills.add(skill);
-//     skills.stream().
-//    skills.stream()
-//       skills.add(skill);
-//       skills.stream().forEach(System.out::println);
 
        return null;
     }
-    void deleteById(Long id) throws IOException { }
 
-//    static ArrayList<Skill> parseJsonToSkills(String json){
-//        Type targetClassType = new TypeToken<ArrayList<Skill>>() { }.getType();
-//        Collection<Skill> targetCollection = new Gson().fromJson(json,targetClassType);
-//        assertThat(targetCollection, instanceOf(ArrayList.class));
-//        return (ArrayList) targetCollection;
-//    }
-}
+    void deleteById(Long id) { }
+
+    }
+
 
