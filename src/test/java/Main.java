@@ -5,9 +5,7 @@ public class Main {
      Skill two = SkillRepository.save(new Skill((long) 2,"two"));
      Skill three = SkillRepository.save(new Skill((long) 3,"three"));
      System.out.println(SkillRepository.getAll());
-     SkillRepository.update(new Skill((long) 2,"five"));
+     System.out.println(SkillRepository.update(new Skill((long) 2,"five")));
      System.out.println(SkillRepository.getAll());
-
-
     }
 }

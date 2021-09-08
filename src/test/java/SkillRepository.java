@@ -73,7 +73,6 @@ public class SkillRepository {
                 .map(x -> skills.add(new Skill(x.getId(), x.setName("five"))))
                 .map(x -> new Skill(skill.getId(),skill.getName()))
                 .findFirst().orElse(null);
-
         final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
         Gson gson = new Gson();
         try (FileWriter writer = new FileWriter(JSON_PATH,false)) {
