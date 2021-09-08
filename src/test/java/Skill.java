@@ -1,5 +1,3 @@
-import java.util.Optional;
-
 public class Skill {
 
     private Long id;
@@ -11,9 +9,6 @@ public class Skill {
         this.name = name;
     }
 
-//    public Skill(Long maxId) {
-//        this.id = maxId;
-//    }
 
 
     public Long getId() {
@@ -29,8 +24,10 @@ public class Skill {
         return id;
     }
 
-    public void setName(String name) {
+    public String setName(String name)
+    {
         this.name = name;
+        return name;
     }
 
     @Override
