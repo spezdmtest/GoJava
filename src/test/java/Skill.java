@@ -1,15 +1,11 @@
 public class Skill {
-
     private Long id;
     private String name;
-
 
     public Skill(Long id, String name) {
         this.id = id;
         this.name = name;
     }
-
-
 
     public Long getId() {
         return id;
@@ -35,6 +31,4 @@ public class Skill {
         return "id: " + id +
                 " name: " + name;
     }
-
-
 }

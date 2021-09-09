@@ -4,11 +4,16 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SkillRepository {
 
     static List<Skill> skills = new ArrayList<>();
+    static List<Skill> buffer = new ArrayList<>();
+
 
     public static ArrayList<Skill> getAll() {
         final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
@@ -70,7 +75,7 @@ public class SkillRepository {
         List<Skill> updateSkill = getAll();
         Skill skillUpdate = updateSkill.stream()
                 .filter(x -> x.getId().equals(skill.getId()))
-                .map(x -> skills.add(new Skill(x.getId(), x.setName("five"))))
+                .map(x -> buffer.add(new Skill(x.getId(), x.setName("five"))))
                 .map(x -> new Skill(skill.getId(),skill.getName()))
                 .findFirst().orElse(null);
         final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
@@ -82,7 +87,21 @@ public class SkillRepository {
         }
         return skillUpdate;
     }
-    void deleteById(Long id) { }
+
+    public static void deleteById(Long id) {
+        Skill skill = skills.stream().filter(x -> x.getId().equals(id))
+                .findFirst()
+                .get();
+        skills.remove(skill);
+        final String JSON_PATH = "C:/Users/spezdm/IdeaProjects/GoJava/skills.json";
+        Gson gson = new Gson();
+        try (FileWriter writer = new FileWriter(JSON_PATH,false)) {
+            gson.toJson(skills, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
 
 
