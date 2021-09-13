@@ -11,13 +11,11 @@ public class Skill {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
-    }
-
-    public Long setId(long id) {
-        this.id = id;
-        return id;
     }
 
     public String setName(String name)
@@ -29,6 +27,6 @@ public class Skill {
     @Override
     public String toString() {
         return "id: " + id +
-                " name: " + name;
+               " name: " + name;
     }
 }
