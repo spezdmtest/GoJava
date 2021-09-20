@@ -1,3 +1,5 @@
+package com.spezdmtest.javacore.crudapp.model;
+
 import java.util.List;
 
 public class Team {

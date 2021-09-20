@@ -1,1 +1,8 @@
-"JavaCore.iml" 
+# folder
+.idea/*
+out/*
+terget/*
+"JavaCore.iml"
+
+# class files
+*.class
