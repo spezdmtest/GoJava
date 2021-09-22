@@ -21,7 +21,7 @@ public class DevView {
     }
 
     public void showAllDevelopers() {
-        List<Developer> allDev = devController.getRepoDev();
+        List<Developer> allDev = devController.getAllDev();
         System.out.println(allDev);
     }
 

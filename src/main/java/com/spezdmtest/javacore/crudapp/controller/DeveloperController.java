@@ -10,7 +10,7 @@ import java.util.List;
 public class DeveloperController {
     private final DeveloperRepository repoDev = new JsonDeveloperRepositoryImpl();
 
-    public List<Developer> getRepoDev() {
+    public List<Developer> getAllDev() {
         return repoDev.getAll();
     }
 

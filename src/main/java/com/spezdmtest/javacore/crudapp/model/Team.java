@@ -7,6 +7,8 @@ public class Team {
     private String name;
     private List<Developer> developers;
 
+    public Team() {}
+
     public Team(Long id, String name, List<Developer> developers) {
         this.id = id;
         this.name = name;
