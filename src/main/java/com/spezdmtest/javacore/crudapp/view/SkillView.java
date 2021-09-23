@@ -8,12 +8,17 @@ import java.util.Scanner;
 
 public class SkillView {
     private final SkillController skillController = new SkillController();
-    private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanID = new Scanner(System.in);
+    private final Scanner scanName = new Scanner(System.in);
 
     public void showMainMenu() {
         System.out.println("Creating skills");
         createSkill();
         showAllSkills();
+
+        System.out.println("Updating skill");
+        updateSkill();
+
     }
 
     public void showAllSkills() {
@@ -23,7 +28,16 @@ public class SkillView {
 
     public void createSkill() {
         System.out.println("Enter skill name: ");
-        String name = scanner.nextLine();
+        String name = scanName.nextLine();
         Skill skill = skillController.createSkill(name);
     }
+
+    public void updateSkill() {
+        System.out.print("Enter id skill name: ");
+        Long id = scanID.nextLong();;
+        System.out.print("Enter new skill name: ");
+        String name = scanName.nextLine();
+        Skill skill = skillController.updateSkill(id,name);
+    }
+
 }

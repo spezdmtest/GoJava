@@ -17,4 +17,11 @@ public class SkillController {
         s.setName(name);
         return repoSkill.save(s);
     }
+
+    public Skill updateSkill(Long id,String name) {
+        Skill s = new Skill();
+        s.setId(id);
+        s.setName(name);
+        return repoSkill.update(s);
+    }
 }
