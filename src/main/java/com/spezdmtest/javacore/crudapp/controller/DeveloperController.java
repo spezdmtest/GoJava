@@ -21,4 +21,12 @@ public class DeveloperController {
         d.setSkills(skills);
         return repoDev.save(d);
     }
+
+    public Developer updateDev(Long id, String FirstName, String Lastname) {
+        Developer d = new Developer();
+        d.setId(id);
+        d.setFirstName(FirstName);
+        d.setLastName(Lastname);
+        return repoDev.update(d);
+    }
 }
