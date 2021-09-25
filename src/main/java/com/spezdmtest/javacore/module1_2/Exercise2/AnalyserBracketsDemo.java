@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.chapter18.Exercise2;
+package com.spezdmtest.javacore.module1_2.Exercise2;
 
 public class AnalyserBracketsDemo {
     public static void main(String[] args) {
