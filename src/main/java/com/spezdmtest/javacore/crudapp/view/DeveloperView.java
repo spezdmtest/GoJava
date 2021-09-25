@@ -8,7 +8,7 @@ import com.spezdmtest.javacore.crudapp.model.Skill;
 import java.util.List;
 import java.util.Scanner;
 
-public class DevView {
+public class DeveloperView {
     private final DeveloperController devController = new DeveloperController();
     private final SkillController skillController = new SkillController();
     private final Scanner scanId = new Scanner(System.in);
@@ -16,12 +16,16 @@ public class DevView {
 
 
     public void showMainMenu () {
-        System.out.println("Creating developers");
+        System.out.println("Create developer");
         createDev();
         showAllDevelopers();
 
-        System.out.println("Updating developers");
+        System.out.println("Update developer");
         updateDev();
+        showAllDevelopers();
+
+        System.out.println("Delete developer");
+        deleteByIdDev();
         showAllDevelopers();
     }
 
@@ -36,16 +40,21 @@ public class DevView {
         String FirstName = scanName.nextLine();
         System.out.print("Enter developers LastName: ");
         String LastName = scanName.nextLine();
-        Developer dev = devController.createDev(FirstName,LastName,skills);
+        devController.createDev(FirstName,LastName,skills);
     }
 
     public void updateDev() {
-        System.out.print("Enter id developer name: ");
+        System.out.print("Enter id developer: ");
         Long id = scanId.nextLong();
         System.out.print("Enter new FirstName developers: ");
         String FirstName = scanName.nextLine();
-        System.out.println("Enter new LastName developers: ");
+        System.out.print("Enter new LastName developers: ");
         String LastName = scanName.nextLine();
-        Developer developer = devController.updateDev(id,FirstName,LastName);
+        devController.updateDev(id,FirstName,LastName);
+    }
+    public void deleteByIdDev() {
+        System.out.println("Enter id developer for delete: ");
+        Long id = scanId.nextLong();
+        devController.deleteByIdDev(id);
     }
 }

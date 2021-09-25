@@ -1,6 +1,6 @@
 package com.spezdmtest.javacore.crudapp.AppRunner;
 
-import com.spezdmtest.javacore.crudapp.view.DevView;
+import com.spezdmtest.javacore.crudapp.view.DeveloperView;
 import com.spezdmtest.javacore.crudapp.view.SkillView;
 import com.spezdmtest.javacore.crudapp.view.TeamView;
 
@@ -10,8 +10,8 @@ public class Application {
         skillView.showMainMenu();
         System.out.println();
 
-        DevView devView = new DevView();
-        devView.showMainMenu();
+        DeveloperView developerView = new DeveloperView();
+        developerView.showMainMenu();
         System.out.println();
 
         TeamView teamView = new TeamView();

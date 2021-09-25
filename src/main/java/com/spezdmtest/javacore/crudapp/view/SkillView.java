@@ -12,14 +12,17 @@ public class SkillView {
     private final Scanner scanName = new Scanner(System.in);
 
     public void showMainMenu() {
-        System.out.println("Creating skills");
+        System.out.println("Create skill");
         createSkill();
         showAllSkills();
 
-        System.out.println("Updating skill");
+        System.out.println("Update skill");
         updateSkill();
         showAllSkills();
 
+        System.out.println("Delete skill");
+        deleteByIdSkill();
+        showAllSkills();
     }
 
     public void showAllSkills() {
@@ -30,15 +33,20 @@ public class SkillView {
     public void createSkill() {
         System.out.println("Enter skill name: ");
         String name = scanName.nextLine();
-        Skill skill = skillController.createSkill(name);
+        skillController.createSkill(name);
     }
 
     public void updateSkill() {
-        System.out.print("Enter id skill name: ");
+        System.out.print("Enter id skill: ");
         Long id = scanId.nextLong();
         System.out.print("Enter new skill name: ");
         String name = scanName.nextLine();
-        Skill skill = skillController.updateSkill(id,name);
+        skillController.updateSkill(id,name);
     }
 
+    public void deleteByIdSkill() {
+        System.out.print("Enter id skill for delete: ");
+        Long id = scanId.nextLong();
+        skillController.deleteByIdSkill(id);
+    }
 }

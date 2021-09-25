@@ -24,4 +24,8 @@ public class SkillController {
         s.setName(name);
         return repoSkill.update(s);
     }
+
+    public void deleteByIdSkill(Long id) {
+        repoSkill.deleteById(id);
+    }
 }

@@ -27,4 +27,8 @@ public class TeamController {
         t.setName(name);
         return repoTeam.update(t);
     }
+
+    public void deleteByIdTeam(Long id) {
+        repoTeam.deleteById(id);
+    }
 }

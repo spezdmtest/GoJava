@@ -29,4 +29,8 @@ public class DeveloperController {
         d.setLastName(Lastname);
         return repoDev.update(d);
     }
+
+    public void deleteByIdDev(Long id) {
+        repoDev.deleteById(id);
+    }
 }
