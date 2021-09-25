@@ -20,4 +20,11 @@ public class TeamController {
         t.setDevelopers(developers);
         return repoTeam.save(t);
     }
+
+    public Team updateTeam(Long id, String name) {
+        Team t = new Team();
+        t.setId(id);
+        t.setName(name);
+        return repoTeam.update(t);
+    }
 }
