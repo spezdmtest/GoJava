@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.chapter18.Exercise1;
+package com.spezdmtest.javacore.module1_2.Exercise1;
 
 import java.util.List;
 
