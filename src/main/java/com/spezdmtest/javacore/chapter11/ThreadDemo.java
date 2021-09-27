@@ -2,7 +2,6 @@ package com.spezdmtest.javacore.chapter11;
 
 class NewThread implements Runnable {
     Thread t;
-
     NewThread() {
         t = new Thread(this,"Демострационный поток");
         System.out.println("Дочерний поток создан: " + t);
