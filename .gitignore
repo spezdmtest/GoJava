@@ -1,9 +1,1 @@
-# folder
-.idea/*
-out/*
-terget/*
-"JavaCore.iml"
-JavaCore.iml
-
-# class files
-*.class
+"JavaCore.iml" 
