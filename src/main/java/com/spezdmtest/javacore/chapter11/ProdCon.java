@@ -58,7 +58,6 @@ class Consumer2 implements Runnable {
     }
 }
 
-
 public class ProdCon {
     public static void main(String[] args) {
         Q2 q = new Q2();
