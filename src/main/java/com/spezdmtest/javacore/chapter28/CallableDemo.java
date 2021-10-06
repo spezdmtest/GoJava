@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.chapter11;
+package com.spezdmtest.javacore.chapter28;
 import java.util.concurrent.*;
 
 public class CallableDemo {
