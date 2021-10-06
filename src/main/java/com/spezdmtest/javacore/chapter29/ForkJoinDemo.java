@@ -43,6 +43,8 @@ public class ForkJoinDemo {
         SqrtTransform task = new SqrtTransform(nums, 0, nums.length);
         fjp.invoke(task);
 
+
+
         System.out.println("Часть преобразованной последовальности " +
                 "(с точностью до четырех знаков после десятичной точки): ");
 
