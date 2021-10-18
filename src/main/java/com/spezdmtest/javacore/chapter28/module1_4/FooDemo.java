@@ -1,72 +1,60 @@
 package com.spezdmtest.javacore.chapter28.module1_4;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
 
 public class FooDemo {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         Foo foo = new Foo();
-        new Thread(new Thread1(foo)).start();
-        new Thread(new Thread2(foo)).start();
-        new Thread(new Thread3(foo)).start();
-    }
-}
-class Thread1 implements Runnable {
-    private Foo foo;
-    public Thread1(Foo foo) {
-        this.foo = foo;
-    }
+        CompletableFuture<Void> printFirst = CompletableFuture.runAsync(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    foo.first(this::run);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
+        CompletableFuture<Void> printSecond = CompletableFuture.runAsync(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    foo.second(this::run);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
-    @Override
-    public void run() {
-        try {
-            foo.first(this::run);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
+        CompletableFuture<Void> printThird = CompletableFuture.runAsync(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    foo.third(this::run);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
-class Thread2 implements Runnable {
-    private Foo foo;
-    public Thread2(Foo foo) {
-        this.foo = foo;
-    }
-    @Override
-    public void run() {
-        try {
-            foo.second(this::run);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-class Thread3 implements Runnable {
-    private Foo foo;
-    public Thread3(Foo foo) {
-        this.foo = foo;
-    }
-
-    @Override
-    public void run() {
-        try {
-            foo.third(this::run);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        printFirst.get();
+        printSecond.get();
+        printThird.get();
     }
 }
 class Foo {
-    private Semaphore sem1;
-    private Semaphore sem2;
+    private Semaphore semaphore1;
+    private Semaphore semaphore2;
 
     public Foo() {
-        sem1 = new Semaphore(1);
-        sem2 = new Semaphore(1);
+        semaphore1 = new Semaphore(1);
+        semaphore2 = new Semaphore(1);
 
         try {
-            sem1.acquire();
-            sem2.acquire();
+            semaphore1.acquire();
+            semaphore2.acquire();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -74,21 +62,18 @@ class Foo {
 
     void first(Runnable r) throws InterruptedException {
         print("first");
-        r.run();
-        sem1.release();
+        semaphore1.release();
     }
 
     void second(Runnable r) throws InterruptedException {
-        sem1.acquire();
+        semaphore1.acquire();
         print("second");
-        r.run();
-        sem2.release();
+        semaphore2.release();
     }
 
     void third(Runnable r) throws InterruptedException {
-        sem2.acquire();
+        semaphore2.acquire();
         print("third");
-        r.run();
     }
 
     private void print(String str) {
