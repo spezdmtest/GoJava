@@ -38,7 +38,6 @@ public class FooDemo {
                 }
             }
         });
-
         printFirst.get();
         printSecond.get();
         printThird.get();
@@ -75,7 +74,6 @@ class Foo {
         semaphore2.acquire();
         print("third");
     }
-
     private void print(String str) {
         System.out.print(str);
     }
