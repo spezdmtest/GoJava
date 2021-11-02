@@ -20,7 +20,7 @@ public abstract class Notifier {
             nextNotifier.notifyManager(message, level);
         }
     }
-        public abstract void write(String message);
+    public abstract void write(String message);
 
-    }
+}
 

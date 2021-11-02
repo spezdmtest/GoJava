@@ -1,7 +1,5 @@
 package com.spezdmtest.javacore.module1_5_3.Chain;
 
-import com.spezdmtest.javacore.module1_5_2.Bridge.Program;
-
 public class BugTracker {
     public static void main(String[] args) {
         Notifier reportNotifier = new SimpleReportNotifier(Priority.ROUTINE);
@@ -14,7 +12,5 @@ public class BugTracker {
         reportNotifier.notifyManager("Everything is OK.",Priority.ROUTINE);
         reportNotifier.notifyManager("Something went wrong!", Priority.IMPORTANT);
         reportNotifier.notifyManager("Houston, we've had a problem here!!!",Priority.ASAP );
-
-
     }
 }
