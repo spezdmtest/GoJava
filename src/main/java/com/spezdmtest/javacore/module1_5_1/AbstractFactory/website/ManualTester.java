@@ -1,6 +1,6 @@
-package com.spezdmtest.javacore.module1_5.AbstractFactory.website;
+package com.spezdmtest.javacore.module1_5_1.AbstractFactory.website;
 
-import com.spezdmtest.javacore.module1_5.AbstractFactory.Tester;
+import com.spezdmtest.javacore.module1_5_1.AbstractFactory.Tester;
 
 public class ManualTester implements Tester {
     @Override

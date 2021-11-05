@@ -1,6 +1,6 @@
-package com.spezdmtest.javacore.module1_5.AbstractFactory;
+package com.spezdmtest.javacore.module1_5_1.AbstractFactory;
 
-import com.spezdmtest.javacore.module1_5.AbstractFactory.banking.BankingTeamFactory;
+import com.spezdmtest.javacore.module1_5_1.AbstractFactory.banking.BankingTeamFactory;
 
 public class SuperBankSystem {
     public static void main(String[] args) {

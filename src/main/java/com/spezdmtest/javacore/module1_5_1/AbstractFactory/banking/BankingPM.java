@@ -1,5 +1,5 @@
-package com.spezdmtest.javacore.module1_5.AbstractFactory.banking;
-import com.spezdmtest.javacore.module1_5.AbstractFactory.ProjectManager;
+package com.spezdmtest.javacore.module1_5_1.AbstractFactory.banking;
+import com.spezdmtest.javacore.module1_5_1.AbstractFactory.ProjectManager;
 
 public class BankingPM implements ProjectManager {
     @Override

@@ -1,6 +1,6 @@
-package com.spezdmtest.javacore.module1_5.AbstractFactory.banking;
+package com.spezdmtest.javacore.module1_5_1.AbstractFactory.banking;
 
-import com.spezdmtest.javacore.module1_5.AbstractFactory.Tester;
+import com.spezdmtest.javacore.module1_5_1.AbstractFactory.Tester;
 
 public class QATester implements Tester {
     @Override

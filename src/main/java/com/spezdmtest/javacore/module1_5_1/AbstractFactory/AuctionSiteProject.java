@@ -1,6 +1,6 @@
-package com.spezdmtest.javacore.module1_5.AbstractFactory;
+package com.spezdmtest.javacore.module1_5_1.AbstractFactory;
 
-import com.spezdmtest.javacore.module1_5.AbstractFactory.website.WebsiteTeamFactory;
+import com.spezdmtest.javacore.module1_5_1.AbstractFactory.website.WebsiteTeamFactory;
 
 public class AuctionSiteProject {
     public static void main(String[] args) {
