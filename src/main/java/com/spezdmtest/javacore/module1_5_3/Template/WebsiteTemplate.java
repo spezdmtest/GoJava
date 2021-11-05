@@ -1,0 +1,12 @@
+package com.spezdmtest.javacore.module1_5_3.Template;
+
+public abstract class WebsiteTemplate {
+    public void showPage() {
+        System.out.println("Header");
+        showPageContent();
+        System.out.println("Footer");
+    }
+
+    public abstract void showPageContent();
+
+}
