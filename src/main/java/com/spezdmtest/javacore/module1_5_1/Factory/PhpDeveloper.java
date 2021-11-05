@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.module1_5.Factory;
+package com.spezdmtest.javacore.module1_5_1.Factory;
 
 public class PhpDeveloper implements Developer  {
     @Override
