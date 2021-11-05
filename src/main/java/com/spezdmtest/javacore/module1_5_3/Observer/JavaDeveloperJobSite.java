@@ -20,7 +20,6 @@ public class JavaDeveloperJobSite implements Observed {
 
     @Override
     public void addObserver(Observer observer) {
-
         this.subscribers.add(observer);
     }
 
@@ -34,6 +33,5 @@ public class JavaDeveloperJobSite implements Observed {
         for(Observer observer: subscribers) {
             observer.handleEvent(this.vacancies);
         }
-
     }
 }
