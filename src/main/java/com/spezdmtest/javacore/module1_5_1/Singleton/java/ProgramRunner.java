@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.module1_5.Singleton.java;
+package com.spezdmtest.javacore.module1_5_1.Singleton.java;
 
 public class ProgramRunner {
     public static void main(String[] args) {

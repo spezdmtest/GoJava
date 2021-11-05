@@ -1,10 +1,10 @@
-package com.spezdmtest.javacore.module1_5.Singleton.java;
+package com.spezdmtest.javacore.module1_5_1.Singleton.java;
 
 public class ProgramLogger {
     private static ProgramLogger programLogger;
     private static String logFile = "This is log file.... \n\n";
 
-    public static ProgramLogger getProgramLogger() {
+    public static synchronized ProgramLogger getProgramLogger() {
          if(programLogger == null) {
              programLogger = new ProgramLogger();
          }
@@ -23,3 +23,4 @@ public class ProgramLogger {
         System.out.println(logFile);
     }
 }
+
