@@ -1,4 +1,4 @@
-package com.spezdmtest.javacore.module1_5.Builder;
+package com.spezdmtest.javacore.module1_5_1.Builder;
 
 public class EnterpriseWebsiteBuilder extends WebsiteBuilder {
     @Override
@@ -8,7 +8,7 @@ public class EnterpriseWebsiteBuilder extends WebsiteBuilder {
 
     @Override
     void buildCms() {
-        website.setCms(Cms.ALIFRESCO);
+        website.setCms(Cms.ALFRESCO);
     }
 
     @Override
