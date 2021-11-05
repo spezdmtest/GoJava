@@ -7,7 +7,7 @@ public class BugTracker {
         Notifier smsNotifier = new SMSNotifier(Priority.ASAP);
 
         reportNotifier.setNextNotifier(emailNotifier);
-        emailNotifier.setNextNotifier(smsNotifier );
+        emailNotifier.setNextNotifier(smsNotifier);
 
         reportNotifier.notifyManager("Everything is OK.",Priority.ROUTINE);
         reportNotifier.notifyManager("Something went wrong!", Priority.IMPORTANT);
