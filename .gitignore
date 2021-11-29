@@ -5,5 +5,5 @@ out/*
 
 # class files
 *.class
-/target/
+target/*
 
