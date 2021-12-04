@@ -24,11 +24,10 @@ public class CallableStatementDemo {
         try {
             String SQL = "{call getDeveloperName(?,?)}";
             callableStatement = connection.prepareCall(SQL);
-            callableStatement.registerOutParameter(2, Types.VARCHAR);
 
             int developerID = 1;
             callableStatement.setInt(1,developerID);
-            callableStatement.registerOutParameter(2,Types.VARCHAR);
+            callableStatement.registerOutParameter(2, Types.VARCHAR);
 
             System.out.println("Executing procedure...");
             callableStatement.execute();
