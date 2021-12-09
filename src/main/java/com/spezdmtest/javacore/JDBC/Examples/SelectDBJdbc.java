@@ -3,9 +3,8 @@ package com.spezdmtest.javacore.JDBC.Examples;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class CreateDBJdbc {
+public class SelectDBJdbc {
     static final String DATABASE_URL = "jdbc:mysql://localhost:3306/mysql?serverTimezone=Europe/Kiev";
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
@@ -14,29 +13,20 @@ public class CreateDBJdbc {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Connection connection = null;
-        Statement statement = null;
 
         try {
-            System.out.println("Registration JDBC driver...");
+            System.out.println("Registering JDBC driver.... ");
             Class.forName(JDBC_DRIVER);
 
-            System.out.println("Connection to DB ...");
+            System.out.println("Connecting to databases");
             connection = DriverManager.getConnection(DATABASE_URL,USER,PASSWORD);
 
-            System.out.println("Creating database...");
-            statement = connection.createStatement();
-
-            String SQL = "CREATE DATABASE PROSELYTE_JDBC_DB";
-            statement.executeUpdate(SQL);
-            System.out.println("Database successfully created.....");
-        } finally {
-            if(statement != null) {
-                statement.close();
-            }
-
+            System.out.println("Connection to " + DATABASE_URL + " successfully established.");
+        }finally {
             if(connection != null) {
                 connection.close();
             }
         }
+
     }
 }
